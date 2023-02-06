@@ -18,7 +18,7 @@ gem 'slim-rails', '~> 3.1', '>= 3.1.1'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem 'rspec-rails', '~> 5.1', '>= 5.1.2'
+  gem 'rspec-rails'
   gem 'factory_bot_rails'
 end
 
@@ -28,6 +28,7 @@ group :development do
   gem 'rubocop-rails', '~> 2.14', require: false
   gem 'rubocop-rspec', '~> 2.10', require: false
   gem 'rubocop-performance', '~> 1.13', require: false
+  gem 'spring-commands-rspec'
 end
 
 group :test do

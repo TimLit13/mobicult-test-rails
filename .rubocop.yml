@@ -31,3 +31,9 @@ Layout/LineLength:
   
 Style/RedundantFileExtensionInRequire:
   Enabled: false
+
+RSpec/ImplicitExpect:
+  Enabled: false
+
+RSpec/Rails/InferredSpecType:
+  Enabled: false
