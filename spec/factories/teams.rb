@@ -3,6 +3,6 @@ FactoryBot.define do
     title { 'team title' }
 
     trait :invalid do
-      first_name { nil }
+      title { nil }
   end
 end
