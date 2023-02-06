@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_06_183635) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_06_185040) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_06_183635) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "player_performances", force: :cascade do |t|
+    t.bigint "player_id"
+    t.bigint "performance_goal_id"
+    t.bigint "match_id"
+    t.boolean "reached_performance", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_player_performances_on_match_id"
+    t.index ["performance_goal_id"], name: "index_player_performances_on_performance_goal_id"
+    t.index ["player_id"], name: "index_player_performances_on_player_id"
+  end
+
   create_table "players", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -47,5 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_06_183635) do
 
   add_foreign_key "matches", "teams", column: "away_team_id"
   add_foreign_key "matches", "teams", column: "home_team_id"
+  add_foreign_key "player_performances", "matches"
+  add_foreign_key "player_performances", "performance_goals"
+  add_foreign_key "player_performances", "players"
   add_foreign_key "players", "teams"
 end
