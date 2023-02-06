@@ -1,0 +1,29 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+    - '.git/**/*'
+    - 'bin/*'
+    - 'config/**/*'
+    - 'db/schema.rb'
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'node_modules/**/*'
+    - 'db/migrate/**/*'
+  TargetRubyVersion: 3.2
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+  
+Style/RedundantFileExtensionInRequire:
+  Enabled: false
