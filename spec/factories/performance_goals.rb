@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :performance_goal do
     title { 'Scores' }
-    value { 1 }
+    value { 3 }
 
     trait :invalid do
       title { nil }
