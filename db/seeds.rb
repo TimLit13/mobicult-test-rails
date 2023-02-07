@@ -1,3 +1,5 @@
+require 'faker'
+
 # instances amount
 PLAYERS_SEED = 22
 TEAMS_SEED = 2
